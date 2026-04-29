@@ -15,7 +15,7 @@ services:
       - canopy-data:/root/.canopy
     environment:
       - CANOPY_ENV=${CANOPY_ENV:-mainnet}
-      - LOG_LEVEL=${LOG_LEVEL:-debug}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
     networks:
       - canopy-net
     healthcheck:
@@ -23,7 +23,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 30s
+      start_period: 60s
 
   canopy-auto-update:
     build:
